@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naroxyy</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Subtle Glassmorphism Effect */
+        .glass-card {
+            background: rgba(249, 249, 249, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 0, 0, 0.4);
+        }
+        
+        /* Animated Gradient Background */
+        .bg-gradient-animated {
+            background: linear-gradient(-45deg, #003cff, #c800ff, #016fff, #04f568);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-animated min-h-screen font-sans text-slate-800 antialiased py-8 px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
+
+    <!-- Container Utama -->
+    <div class="max-w-4xl mx-auto w-full space-y-6">
+
+        <!-- Header / Main Hero Card -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden transition-all hover:shadow-2xl">
+            <!-- Decorative Accents -->
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-purple-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+                
+                <!-- Foto Profil dengan Ring Gradient -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                    <img 
+                        src="foto.jpeg" 
+                        alt="foto.jpeg" 
+                        class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-white shadow-md transition transform group-hover:scale-105 duration-300"
+                        onerror="this.onerror=null; this.src='https://placehold.co/300x300/6366f1/ffffff?text=Profil';"
+                    />
+                    <span class="absolute bottom-2 right-2 bg-emerald-500 border-2 border-white w-5 h-5 rounded-full shadow-sm" title="Status Aktif"></span>
+                </div>
+
+                <!-- Bio Singkat -->
+                <div class="text-center md:text-left space-y-3 flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold tracking-wide uppercase border border-brand-100">
+                        <i class="fa-solid fa-graduation-cap"></i> Pelajar Aktif
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Muhammad Rafa Alfath
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 font-medium">
+                        Siswa SMK Negeri 1 Gunung Putri • Kelas X RPL 3
+                    </p>
+                    
+                    <!-- Quick Action Buttons -->
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                        <a href="mailto:rafaalfath091@email.com" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                            <i class="fa-regular fa-envelope"></i> Hubungi Saya
+                        </a>
+                        <button onclick="scrollToHobby()" class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-medium px-5 py-2.5 rounded-xl border border-slate-200 shadow-sm transition-all hover:border-slate-300">
+                            <i class="fa-solid fa-heart text-rose-500"></i> Lihat Hobi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid Informasi Utama & Motto -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Detail Informasi Pribadi (2 Kolom) -->
+            <div class="glass-card rounded-3xl p-6 shadow-xl md:col-span-2 space-y-4">
+                <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900">Informasi Pribadi</h2>
+                        <p class="text-xs text-slate-500">Data diri & identitas lengkap</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    
+                    <!-- Item Detail -->
+                    <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                        <div class="p-2 rounded-lg bg-indigo-50 text-brand-600">
+                            <i class="fa-solid fa-id-card text-lg w-5 text-center"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-slate-400">Nama Lengkap</p>
+                            <p class="text-sm font-semibold text-slate-800">Muhammad Rafa Alfath</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Detail -->
+                    <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                        <div class="p-2 rounded-lg bg-pink-50 text-pink-600">
+                            <i class="fa-solid fa-calendar-day text-lg w-5 text-center"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-slate-400">Tempat, Tanggal Lahir</p>
+                            <p class="text-sm font-semibold text-slate-800">Bogor, 17 Oktober 2010</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Detail -->
+                    <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                        <div class="p-2 rounded-lg bg-amber-50 text-amber-600">
+                            <i class="fa-solid fa-school text-lg w-5 text-center"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-slate-400">Sekolah & Kelas</p>
+                            <p class="text-sm font-semibold text-slate-800">SMK Negeri 1 Gunung Putri (X RPL 3)</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Detail -->
+                    <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                        <div class="p-2 rounded-lg bg-emerald-50 text-emerald-600">
+                            <i class="fa-solid fa-envelope text-lg w-5 text-center"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-slate-400">Email</P>
+                            <p class="text-sm font-semibold text-slate-800 truncate max-w-[150px] sm:max-w-none">rafaalfath091@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Detail (Alamat - Span 2) -->
+                    <div class="sm:col-span-2 flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-slate-100 shadow-sm">
+                        <div class="p-2 rounded-lg bg-blue-50 text-blue-600">
+                            <i class="fa-solid fa-location-dot text-lg w-5 text-center"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-slate-400">Alamat Tempat Tinggal</p>
+                            <p class="text-sm font-semibold text-slate-800">Kab.Bogor, Jl kp.Cikeas Udik</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card Motto Hidup (1 Kolom) -->
+            <div class="glass-card rounded-3xl p-6 shadow-xl flex flex-col justify-between relative overflow-hidden bg-gradient-to-br from-brand-600 to-brand-900 text-white border-0">
+                <!-- Background pattern -->
+                <i class="fa-solid fa-quote-right absolute -bottom-6 -right-6 text-9xl text-white/10"></i>
+
+                <div class="space-y-4 relative z-10">
+                    <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-amber-300">
+                        <i class="fa-solid fa-quote-left text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-bold">Motto Hidup</h2>
+                    <blockquote class="text-base font-light italic leading-relaxed text-brand-100">
+                        "Sukses bukan tentang seberapa cepat kamu mencapai tujuan, tetapi seberapa konsisten kamu melangkah setiap hari."
+                    </blockquote>
+                </div>
+
+                <div class="pt-6 relative z-10 flex items-center gap-3">
+                    <div class="h-0.5 w-10 bg-amber-400 rounded-full"></div>
+                    <span class="text-xs font-medium tracking-wider uppercase text-brand-200">Prinsip Diri</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section Hobi -->
+        <div id="hobby-section" class="glass-card rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900">Hobi & Minat</h2>
+                        <p class="text-xs text-slate-500">Kegiatan yang suka saya lakukan di waktu luang</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Hobi -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                
+                <!-- Card Hobi 1 -->
+                <div class="group bg-white/70 hover:bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center gap-3 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 group-hover:bg-brand-600 text-brand-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors duration-300 shadow-inner">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 group-hover:text-brand-600 transition-colors">Coding</h3>
+                        <p class="text-xs text-slate-500 mt-1">Web Development</p>
+                    </div>
+                </div>
+
+                <!-- Card Hobi 2 -->
+                <div class="group bg-white/70 hover:bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center gap-3 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 group-hover:bg-emerald-600 text-emerald-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors duration-300 shadow-inner">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Membaca</h3>
+                        <p class="text-xs text-slate-500 mt-1">Buku Sains & Fiksi</p>
+                    </div>
+                </div>
+
+                <!-- Card Hobi 3 -->
+                <div class="group bg-white/70 hover:bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center gap-3 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-50 group-hover:bg-amber-500 text-amber-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors duration-300 shadow-inner">
+                        <i class="fa-solid fa-basketball"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 group-hover:text-amber-600 transition-colors">Basket</h3>
+                        <p class="text-xs text-slate-500 mt-1">Olahraga Tim</p>
+                    </div>
+                </div>
+
+                <!-- Card Hobi 4 -->
+                <div class="group bg-white/70 hover:bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center gap-3 hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-50 group-hover:bg-purple-600 text-purple-600 group-hover:text-white flex items-center justify-center text-2xl transition-colors duration-300 shadow-inner">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 group-hover:text-purple-600 transition-colors">Fotografi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Pemandangan Alam</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-slate-500 py-4">
+        <p>© 2026 Muhammad Rafa Alfath. Dibuat untuk Tugas Pemrograman Web.</p>
+    </footer>
+
+    <!-- Script Sederhana untuk Smooth Scroll -->
+    <script>
+        function scrollToHobby() {
+            document.getElementById('hobby-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+</body>
+</html>
